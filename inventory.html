@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The New Precision Thought Works / Factory Inventory</title>
+  <style>
+    /* BAUHAUS DESIGN SYSTEM SYSTEM-FONTS (FUTURA / SANS-SERIF) */
+    :root {
+      --bg-color: #f4f1ea;       /* Raw newsprint / matte canvas tone */
+      --text-color: #111111;     /* Industrial charcoal */
+      --bauhaus-red: #d63426;    /* Solid primary red */
+      --grid-border: 2px solid #111111;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: "Futura", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.4;
+      padding: 20px;
+    }
+
+    /* STRUCTURAL ASYMMETRICAL GRID */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      border: var(--grid-border);
+      display: grid;
+      grid-template-columns: 300px 1fr;
+    }
+
+    /* LEFT CONTROLLER STRIP */
+    header {
+      border-right: var(--grid-border);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .brand-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      line-height: 0.9;
+    }
+
+    /* STARK BRECHTIAN MAXIM ACCENT BLOCK */
+    .motto-block {
+      margin-top: 40px;
+      padding: 20px 0;
+      border-top: var(--grid-border);
+      border-bottom: var(--grid-border);
+    }
+
+    .motto-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: var(--bauhaus-red);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .motto-text {
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+
+    /* NAVIGATION BACK BUTTON */
+    .btn-back {
+      display: block;
+      text-align: center;
+      border: var(--grid-border);
+      padding: 12px 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-decoration: none;
+      color: var(--text-color);
+      margin-top: 40px;
+      transition: background-color 0.15s ease;
+      background-color: var(--bg-color);
+    }
+
+    .btn-back:hover {
+      background-color: var(--text-color);
+      color: var(--bg-color);
+    }
+
+    /* RIGHT MAIN FLOOR: INVENTORY LIST */
+    main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* INTEGRATED PRECISIONIST HEADER ART BANNER */
+    .inventory-hero-frame {
+      border-bottom: var(--grid-border);
+      background-color: var(--text-color);
+      max-height: 220px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .inventory-hero-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      object-position: center 20%; /* Crops horizontally focusing on the industrial peaks */
+    }
+
+    .hero-strip {
+      border-bottom: var(--grid-border);
+      padding: 40px;
+      background-color: var(--text-color);
+      color: var(--bg-color);
+    }
+
+    .hero-strip h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      line-height: 1.0;
+    }
+
+    /* REVERSE CHRONOLOGICAL ORDERED LIST CONTAINER */
+    .inventory-section {
+      padding: 40px;
+    }
+
+    ol.reverse-list {
+      display: flex;
+      flex-direction: column-reverse; /* Forces visual reverse order */
+      list-style: none; 
+      counter-reset: inventory-counter 0; 
+    }
+
+    ol.reverse-list li {
+      counter-increment: inventory-counter;
+      border-bottom: 1px solid var(--text-color);
+      padding: 20px 0;
+      display: grid;
+      grid-template-columns: 80px 1fr 150px;
+      align-items: baseline;
+    }
+
+    ol.reverse-list li::before {
+      content: "BATCH " counter(inventory-counter, decimal-leading-zero);
+      font-family: monospace;
+      font-weight: bold;
+      color: var(--bauhaus-red);
+      font-size: 0.85rem;
+    }
+
+    .item-title {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .item-date {
+      font-family: monospace;
+      text-align: right;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .container { grid-template-columns: 1fr; }
+      header { border-right: none; border-bottom: var(--grid-border); }
+      ol.reverse-list li { grid-template-columns: 1fr; gap: 10px; }
+      .item-date { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- LEFT SIDEBAR -->
+    <header>
+      <div>
+        <div class="brand-title">The New<br>Precision<br>Thought<br>Works</div>
+        
+        <!-- INTEGRATED INDUSTRIAL MAXIM STRIP -->
+        <div class="motto-block">
+          <span class="motto-label">A Brechtian Maxim</span>
+          <div class="motto-text">"Don't start from the good old things but the bad new ones."</div>
+        </div>
+
+        <a href="index.html" class="btn-back">← Floor Plan</a>
+      </div>
+    </header>
+
+    <!-- RIGHT SECTION -->
+    <main>
+      <!-- MATCHING ARTWORK CONTAINER STRIP (TOP) -->
+      <div class="inventory-hero-frame">
+        <img src="image_87csOJ.png" alt="Precisionist Chimney Header" class="inventory-hero-img">
+      </div>
+
+      <div class="hero-strip">
+        <h1>Factory Inventory</h1>
+      </div>
+
+      <div class="inventory-section">
+        <!-- Structural Reverse Chronological List -->
+        <ol class="reverse-list">
+          <li>
+            <span class="item-title">Dialectical Blueprint: Epic Theatre Formats</span>
+            <span class="item-date">[ 2026-09-04 ]</span>
+          </li>
+          <li>
+            <span class="item-title">Modellbücher Matrix: Scenic Manifestos</span>
+            <span class="item-date">[ 2026-09-25 ]</span>
+          </li>
+          <li>
+            <span class="item-title">Isotype Standardization Framework</span>
+            <span class="item-date">[ 2026-10-02 ]</span>
+          </li>
+          <li>
+            <span class="item-title">Asymmetrical Web Component Stencils</span>
+            <span class="item-date">[ 2026-10-19 ]</span>
+          </li>
+        </ol>
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

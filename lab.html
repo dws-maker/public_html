@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The New Precision Thought Works / Idea Fabrication Lab</title>
+  <style>
+    /* BAUHAUS DESIGN SYSTEM SYSTEM-FONTS (FUTURA / SANS-SERIF) */
+    :root {
+      --bg-color: #f4f1ea;       /* Raw newsprint / matte canvas tone */
+      --text-color: #111111;     /* Industrial charcoal */
+      --bauhaus-red: #d63426;    /* Solid primary red */
+      --bauhaus-blue: #1d4ed8;   /* Solid primary blue */
+      --grid-border: 2px solid #111111;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: "Futura", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.4;
+      padding: 20px;
+    }
+
+    /* STRUCTURAL ASYMMETRICAL INDUSTRIAL GRID */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      border: var(--grid-border);
+      display: grid;
+      grid-template-columns: 300px 1fr;
+    }
+
+    /* LEFT FIXED COLUMN: THE BASE FACTORY STRIP */
+    header {
+      border-right: var(--grid-border);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: var(--bg-color);
+    }
+
+    .brand-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      line-height: 0.9;
+    }
+
+    .brand-subtitle {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 15px;
+      color: var(--bauhaus-red);
+      font-weight: bold;
+    }
+
+    /* ARTWORK EMBED: SIDEBAR PRECISIONISM TRACK */
+    .sidebar-art-frame {
+      margin: 25px 0;
+      border: var(--grid-border);
+      background-color: var(--text-color);
+      overflow: hidden;
+      display: flex;
+    }
+
+    .sidebar-art-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* STARK BRECHTIAN MAXIM ACCENT BLOCK */
+    .motto-block {
+      margin-top: 20px;
+      padding: 20px 0;
+      border-top: var(--grid-border);
+      border-bottom: var(--grid-border);
+    }
+
+    .motto-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: var(--bauhaus-red);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .motto-text {
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+
+
+/* NAVIGATION BACK BUTTON */
+    .btn-back {
+      display: block;
+      text-align: center;
+      border: var(--grid-border);
+      padding: 12px 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-decoration: none;
+      color: var(--text-color);
+      margin-top: 40px;
+      transition: background-color 0.15s ease;
+      background-color: var(--bg-color);
+    }
+
+    .btn-back:hover {
+      background-color: var(--text-color);
+      color: var(--bg-color);
+    }
+    
+    .factory-meta {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-family: monospace;
+      margin-top: 40px;
+    }
+
+    /* RIGHT COLUMN: MAIN FABRICATION FLOOR */
+    main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* SUB-HERO BANNER STRIP */
+    .hero-strip {
+      border-bottom: var(--grid-border);
+      padding: 40px;
+      background-color: var(--text-color);
+      color: var(--bg-color);
+    }
+
+    .hero-strip h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      line-height: 1.0;
+    }
+
+    /* MAIN CONTENT ROW */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .lab-sector {
+      padding: 30px;
+      padding-bottom: 95px; /* Strict uniform clearance space reserved for the button row */
+      border-bottom: var(--grid-border);
+      display: flex;
+      flex-direction: column;
+      position: relative; 
+    }
+
+    .lab-sector:nth-child(1), .lab-sector:nth-child(3) {
+      border-right: var(--grid-border);
+    }
+
+    .sector-num {
+      font-size: 3rem;
+      font-weight: 900;
+      color: transparent;
+      -webkit-text-stroke: 1.5px var(--text-color);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 15px;
+      letter-spacing: -0.5px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* FIXED ISOTYPE CUSTOM GRAPHIC CONTAINERS */
+    .isotype-container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: auto; 
+      padding: 15px 0 0 0;
+      border-top: 1px dashed #111111;
+      width: 100%;
+    }
+
+    .isotype-img {
+      height: 75px;
+      width: auto;
+      display: block;
+      mix-blend-mode: multiply; 
+    }
+
+    /* UTILITY INDUSTRIAL ACTION BUTTON - DECOUPLED FROM FLOW */
+    .btn-action {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      right: 30px;
+      display: block;
+      text-align: center;
+      border: var(--grid-border);
+      padding: 12px 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      color: var(--text-color);
+      transition: background-color 0.15s ease;
+      background-color: var(--bg-color);
+    }
+
+    .btn-action:hover {
+      background-color: var(--bauhaus-red);
+      color: var(--bg-color);
+    }
+
+    /* STARK METALLURGICAL DECORATIVE FOOTER PANEL */
+    .factory-footer-art {
+      width: 100%;
+      background-color: var(--text-color);
+      border-top: none;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .footer-art-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* RESPONSIVE FLATTENING FOR SMALL SCREENS */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      header {
+        border-right: none;
+        border-bottom: var(--grid-border);
+      }
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+      .lab-sector:nth-child(1), .lab-sector:nth-child(3) {
+        border-right: none;
+      }
+      .lab-sector {
+        padding-bottom: 30px;
+      }
+      .lab-sector:last-child {
+        padding-bottom: 95px;
+      }
+      .isotype-container {
+        margin-top: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- LEFT SIDEBAR: MASTER CONTROLLER BAR -->
+    <header>
+      <div>
+        <div class="brand-title">The New<br>Precision<br>Thought<br>Works</div>
+        <div class="brand-subtitle">Est. 2026 / Laboratory</div>
+        
+        <!-- SIDEBAR IMAGE SLOT (TOP REGION) -->
+        <div class="sidebar-art-frame">
+          <img src="image_87csOJ.png" alt="Chimney and Water Tower" class="sidebar-art-img">
+        </div>
+
+        <!-- INTEGRATED INDUSTRIAL MAXIM STRIP -->
+        <div class="motto-block">
+          <span class="motto-label">A Brechtian Maxim</span>
+          <div class="motto-text">"Don't start from the good old things but the bad new ones."</div>
+        </div>
+        <a href="index.html" class="btn-back">← Floor Plan</a>
+      </div>
+      
+      <div class="factory-meta">
+        [ DEPT: INTELLECTUAL ARBEIT ]<br>
+        [ SHIFT: COLLECTIVE DIALECTIC ]<br>
+        [ STATUS: FUNCTIONAL ]
+      </div>
+      
+      <div class="subsidiary-block" style="margin-top: var(--space-xl, 2rem); border-top: 1px solid currentColor; padding-top: 1rem; text-align: center;">
+        <img src="image_mNYiEn.png" alt="Empty Utopias Corporate Facility" style="width: 100%; height: auto; display: block; margin: 0 auto; filter: grayscale(1) contrast(1.1); mix-blend-mode: multiply;" />
+        <p style="font-style: italic; font-size: 0.8rem; line-height: 1.3; margin-top: 0.5rem; letter-spacing: 0.02em;">
+          A wholly-owned subsidiary of <br /><span style="font-weight: 700 !important; font-style: normal;">Empty Utopias AG</span>.
+        </p>
+      </div>
+
+
+    </header>
+
+    <!-- RIGHT SECTION: PRODUCTION STAGE -->
+    <main>
+      <!-- INDUSTRIAL HEADER BANNER -->
+      <div class="hero-strip">
+        <h1>Idea Fabrication Lab</h1>
+      </div>
+
+      <!-- WORK SECTORS -->
+      <div class="content-grid">
+        
+        <!-- SECTOR 1 -->
+        <div class="lab-sector">
+          <div>
+            <div class="sector-num">01</div>
+            <h2>Concept Smelting & Extraction</h2>
+            <p>Raw historical ore feeds the intake line. Precisionist fragmentation techniques isolate the pure structural spine.</p>
+          </div>
+          
+          <div class="isotype-container">
+            <img src="image_sb8He6.png" alt="Concept Extraction Icon" class="isotype-img">
+          </div>
+        </div>
+
+        <!-- SECTOR 2 -->
+        <div class="lab-sector">
+          <div>
+            <div class="sector-num">02</div>
+            <h2>Structural Staging Models</h2>
+            <p>Compiling the intellectual <em>Modellbücher</em>, so that spatial coordinates and structural geometries are plotted with accuracy.</p>
+          </div>
+          
+          <div class="isotype-container">
+            <img src="image_FESpbf.png" alt="Staging Models Icon" class="isotype-img">
+          </div>
+        </div>
+
+        <!-- SECTOR 3 -->
+        <div class="lab-sector">
+          <div>
+            <div class="sector-num">03</div>
+            <h2>The Dialectical Balance Sheet</h2>
+            <p>Society processed as a dynamic blueprint. Historical data points map cleanly onto clean, linear axes.</p>
+          </div>
+          
+          <div class="isotype-container">
+            <img src="image_GAKcOU.png" alt="Dialectic Ledger Icon" class="isotype-img">
+          </div>
+        </div>
+
+        <!-- SECTOR 4 -->
+        <div class="lab-sector">
+          <div>
+            <div class="sector-num">04</div>
+            <h2>Collective Output Delivery</h2>
+            <p>Theoretical products clear the production line, engineered into clear, unadorned utilities for immediate collective use.</p>
+          </div>
+          
+          <div class="isotype-container">
+            <img src="image_ZUfoB5.png" alt="Collective Delivery Icon" class="isotype-img">
+          </div>
+          <a href="inventory.html" target="_blank" class="btn-action">Factory Inventory</a>
+        </div>
+
+      </div>
+
+      <!-- DECORATIVE INDUSTRIAL FOOTER ART -->
+      <div class="factory-footer-art">
+        <img src="image_lJbxZw.png" alt="Blast Furnaces Footer" class="footer-art-img">
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

@@ -1,12 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple GitHub Site</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The New Precision Thought Works</title>
+  <style>
+    :root {
+      --bg-main: #f5f7f8;         /* Matte newsprint canvas */
+      --bg-canvas: #d4e2eb;       /* Precisionist sky blue */
+      --text-main: #2b2927;       /* Industrial charcoal smoke */
+      --accent-brick: #b54326;    /* Deep terracotta brick red */
+      --accent-gold: #c29d66;     /* Burnished metallic gold */
+      --border-line: #363330;     /* Sharp structural framing line */
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-main: #141617;
+        --bg-canvas: #1f2d36;
+        --text-main: #e3e6e8;
+        --accent-brick: #d4593b;
+        --accent-gold: #d6b47c;
+        --border-line: #4a4744;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      line-height: 1.6;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Structural Framework Layout */
+    .site-header {
+      background-color: var(--bg-canvas);
+      border-bottom: 3px solid var(--border-line);
+    }
+
+    .header-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 24px;
+    }
+
+    .site-title {
+      font-weight: 800;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+      color: var(--text-main);
+    }
+
+    .site-nav a {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      color: var(--text-main);
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: all 0.15s ease;
+    }
+
+    .site-nav a:hover {
+      border: 1px solid var(--border-line);
+      background-color: var(--bg-main);
+    }
+
+    /* Hero Quadrant & Main Grid */
+    .main-layout {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .content-stream h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-top: 0;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--border-line);
+      padding-bottom: 15px;
+    }
+
+    .content-stream p {
+      font-size: 1.05rem;
+      margin-bottom: 25px;
+    }
+
+    /* Call to Action Framework */
+    .action-button {
+      display: inline-block;
+      background-color: var(--accent-brick);
+      color: #ffffff;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      border: 2px solid var(--border-line);
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 4px 4px 0px var(--border-line);
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    .action-button:hover {
+      background-color: var(--accent-gold);
+      color: var(--border-line);
+    }
+
+    .action-button:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--border-line);
+    }
+
+    /* Asymmetric Sidebar */
+    .sidebar-panel {
+      border-left: 2px solid var(--border-line);
+      padding-left: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar-panel {
+        border-left: none;
+        border-top: 2px solid var(--border-line);
+        padding-left: 0;
+        padding-top: 30px;
+      }
+    }
+
+    .sidebar-panel h2 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      margin-top: 0;
+    }
+
+    /* Brechtian Maxim Box */
+    .maxim-box {
+      border: 1px dashed var(--border-line);
+      padding: 20px;
+      margin-top: 30px;
+      background-color: var(--bg-canvas);
+    }
+
+    .maxim-text {
+      font-style: italic;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    /* Footer Image Grids with Layer Blending */
+    .site-footer {
+      margin-top: 100px;
+      border-top: 3px solid var(--border-line);
+      background-color: var(--bg-canvas);
+      padding: 40px 24px;
+    }
+
+    .footer-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .image-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .matrix-item {
+      width: 100%;
+      height: 140px;
+      background-color: var(--border-line);
+      border: 1px solid var(--border-line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: var(--bg-main);
+      overflow: hidden;
+    }
+
+    /* Seamless mix-blend layer for local image files */
+    .matrix-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: multiply;
+      filter: grayscale(30%);
+    }
+
+    .footer-credits {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border-line);
+      padding-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>This is a simple HTML website hosted on GitHub.</p>
+
+  <header class="site-header">
+    <div class="header-wrap">
+      <div class="site-title">The New Precision Thought Works</div>
+    </div>
+  </header>
+
+  <main class="main-layout">
+    <!-- Primary Content Stream -->
+    <section class="content-stream" id="fabrication">
+      <h1>Philosophical Attempts</h1>
+      <p>I make philosophical "attempts" which are invariably followed by failure or disaster, some spectacular.</p>
+      <p>Nonetheless, on a rare occasion, I stumble on to something, ineptly grasped and imperfectly formulated, that others may find some useful for other employment elsewhere.</p>
+      
+      <a href="lab.html" class="action-button">Galvanize!<br />(ぶっ壊したい何もかも)</a>
+
+    </section>
+
+    <!-- Context Sidebar Panel -->
+    <aside class="sidebar-panel">
+      <h2>Inventory Metrics</h2>
+      <p>Monitoring local deployments, model configurations, and hardware parameters dynamically, in real time.</p>
+      
+    </aside>
+  </main>
+
+  <footer class="site-footer" id="ledger">
+    <div class="footer-wrap">
+      <!-- Image quadrant block for local source files -->
+      <div class="image-matrix">
+        <div class="matrix-item">
+          <!-- <img src="local-file-01.png" alt="Industrial Asset"> -->
+          [Curriculum Vitae]
+        </div>
+        <div class="matrix-item">
+          <!-- <img src="local-file-02.png" alt="Industrial Asset"> -->
+          [Academic Courses]
+        </div>
+        <div class="matrix-item">
+          <!-- <img src="local-file-03.png" alt="Industrial Asset"> -->
+          <a href="lab.html" class="action-button">Idea Fabrication Lab</a>
+        </div>
+        <div class="matrix-item">
+          <!-- <img src="local-file-04.png" alt="Industrial Asset"> -->
+           <a href="inventory.html" class="action-button">Latest Inventory</a>
+        </div>
+      </div>
+
+      <div class="footer-credits">
+        <div>&copy; 2026 The New Precision Thought Works: a wholly owned subsidiary of Empty Utopias AG. All Rights Reserved.</div>
+        <div>Inspiration: Charles Demuth, <i>Aucassin and Nicolette</i> (1921)</div>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
